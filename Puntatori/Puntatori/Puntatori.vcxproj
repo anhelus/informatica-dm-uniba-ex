@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="main.c" />
     <ClCompile Include="puntatori.c" />
+    <ClCompile Include="puntatori_funzione.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="puntatori.h" />

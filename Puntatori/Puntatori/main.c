@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "puntatori.h"
+#include "puntatori_funzione.h"
 
 int main() {
 	// Eserczio 1: puntatori e deferenziazione
@@ -20,4 +21,7 @@ int main() {
 	}
 	// Eserczio 4: puntatore a void
 	puntatore_a_void('c');
+	// Esercizio 5
+	char* nome = mio_nome();
+	printf("%s", nome);
 }
