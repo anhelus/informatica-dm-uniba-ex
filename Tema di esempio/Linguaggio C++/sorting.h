@@ -5,16 +5,16 @@
 using namespace std;
 
 namespace sorting {
-	class SortHelper;
+	class Sorter;
 }
 
-class sorting::SortHelper {
+class sorting::Sorter {
 private:
 	vector<int> to_sort;
 	vector<int>::iterator it;
 public:
-	SortHelper();
-	SortHelper(vector<int> to_sort);
+	Sorter();
+	Sorter(vector<int> to_sort);
 	void setVector(vector<int> to_sort);
 	vector<int> getVector();
 	void swap(int l_idx, int r_idx);

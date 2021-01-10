@@ -22,7 +22,8 @@ int main() {
 		}
 	}
 
-	// Parse array
+	// Parsing dell'array
+#pragma region Parsing
 	char vector2[128];
 	strstrp(vector, vector2, '[', ARRAY_SIZE(vector));
 	strstrp(vector2, vector2, ']', ARRAY_SIZE(vector));
@@ -32,14 +33,21 @@ int main() {
 	int idx = string_to_int_array(vector2, values);
 	printf("Parsed array: \n");
 	print_array(values, idx);
+# pragma endregion
 
 	// Selection sort
 	selection_sort(values, idx);
 
-	// Results
+	// Mostra a schermo i risultati
 	printf("Sorted vector: \n");
 	print_array(values, idx);
 
 	printf("Do you want to save results on a text file?\n");
-	save_to_file(values, idx);
+	char s;
+	getchar();
+	scanf_s("%c", &s, 1);
+	if (s == 'Y')
+		save_to_file(values, idx);
+	else
+		exit(EXIT_SUCCESS);
 }

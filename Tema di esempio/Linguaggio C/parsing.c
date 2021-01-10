@@ -3,17 +3,17 @@
 #include <stdlib.h>
 #pragma warning (disable : 4996)
 
-void strstrp(char* str_in, char* str_out, char strp, int length) {
+void strstrp(char input[], char output[], char to_strip, int length) {
 	int j = 0;
 	for (int i = 0; i < length; i++) {
-		if (str_in[i] != strp) {
-			str_out[j] = str_in[i];
+		if (input[i] != to_strip) {
+			output[j] = input[i];
 			j++;
 		}
 	}
 }
 
-int string_to_int_array(char* string, int* buffer) {
+int string_to_int_array(char string[], int buffer[]) {
 	char* number = strtok(string, ",");
 	int numbers = 0;
 	while (number != NULL) {
