@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{a9efe7e4-a8b1-43f8-b43e-85edc20a0380}</ProjectGuid>
-    <RootNamespace>File</RootNamespace>
+    <ProjectGuid>{434851cb-80dd-4d22-88f5-1dcec23a39fb}</ProjectGuid>
+    <RootNamespace>Geometria</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,10 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="source.c" />
+    <ClInclude Include="geometria.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="array.txt" />
+    <ClCompile Include="geometria.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

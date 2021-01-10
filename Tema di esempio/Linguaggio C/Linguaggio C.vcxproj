@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{a9efe7e4-a8b1-43f8-b43e-85edc20a0380}</ProjectGuid>
-    <RootNamespace>File</RootNamespace>
+    <ProjectGuid>{1238ecbe-1f01-406d-9f36-7f4e218571a1}</ProjectGuid>
+    <RootNamespace>LinguaggioC</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,10 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="array.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ioutils.c" />
+    <ClCompile Include="parsing.c" />
+    <ClCompile Include="sorting.c" />
     <ClCompile Include="source.c" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="array.txt" />
+    <ClInclude Include="ioutils.h" />
+    <ClInclude Include="parsing.h" />
+    <ClInclude Include="sorting.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

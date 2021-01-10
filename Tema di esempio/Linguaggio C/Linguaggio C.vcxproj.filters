@@ -15,21 +15,32 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="persona.cpp">
+    <Text Include="array.txt">
+      <Filter>File di risorse</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ioutils.c">
       <Filter>File di origine</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="parsing.c">
       <Filter>File di origine</Filter>
     </ClCompile>
-    <ClCompile Include="contratti.cpp">
+    <ClCompile Include="sorting.c">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="source.c">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="persona.h">
+    <ClInclude Include="ioutils.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="contratti.h">
+    <ClInclude Include="parsing.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="sorting.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

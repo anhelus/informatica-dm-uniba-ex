@@ -13,8 +13,9 @@ void esempio_output() {
 void esempio_input() {
 	int eta;
 	string nome;
+	string cognome;
 	cout << "Inserisci la tua eta' ed il tuo nome: ";
-	cin >> eta >> nome;
+	cin >> eta >> nome >> cognome;
 	if (cin.good()) {
 		cout << "Hai " << eta << " anni e ti chiami " << nome << endl;
 	}
@@ -24,6 +25,8 @@ void esempio_input() {
 }
 
 void esempio_getline() {
+	int eta;
+	cin >> eta;
 	string nome;
 	cout << "Inserisci il tuo nome completo: ";
 	getline(cin, nome);
