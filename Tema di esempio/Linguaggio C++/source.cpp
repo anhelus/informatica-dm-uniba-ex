@@ -39,7 +39,7 @@ int main() {
 
 	print_array(values);
 	// Selection sort
-	SortHelper sort_helper(values);
+	Sorter sort_helper(values);
 	sort_helper.selectionSort();
 	print_array(sort_helper.getVector());
 
