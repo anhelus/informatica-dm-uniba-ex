@@ -65,6 +65,15 @@ class FilePrinter():
 		self.op = op
 		self.cl = cl
 	
+	@classmethod
+	def from_string(cls, f_string: str):
+		fn, fp, dl, op, cl = map(str, f_string.split(' '))
+		return cls(fn, fp, dl, op, cl)
+	
+	@classmethod
+	def from_dict(cls, f_dict: dict):
+		return cls(f_dict[fn], f_dict[fp], f_dict[dl], f_dict[op], f_dict[cl])
+
 	@property
 	def fn(self) -> str:
 		return self._fn

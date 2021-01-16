@@ -2,6 +2,7 @@
 """ Contains dummy tests, not created using an unit test framework.
 """
 from app.algorithms.sorting import SelectionSort
+from app.utils.ioutils import FilePrinter
 
 
 def test_input():
@@ -33,6 +34,21 @@ def test_sorting():
 		print("Testing non-inplace sorting....\t\t\t\t -> ERROR")
 
 
+def test_classmethod():
+	s = ('some_name.txt some_path some_del some_op some_cl')
+	p = FilePrinter.from_string(s)
+	try:
+		assert p.fn == 'some_name.txt'
+		assert p.fp == 'some_path'
+		assert p.dl == 'some_del'
+		assert p.op == 'some_op'
+		assert p.cl == 'some_cl'
+		print("Testing file printer's class method....\t\t\t -> OK")
+	except AssertionError as e:
+		print("Testing file printer's class method....\t\t\t -> ERROR")
+
+
 if __name__ == "__main__":
 	test_input()
 	test_sorting()
+	test_classmethod()
