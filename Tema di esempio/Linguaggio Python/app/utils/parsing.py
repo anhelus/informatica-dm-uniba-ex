@@ -1,4 +1,5 @@
-from typing import List
+import sys
+from typing import Any, List
 
 class Parser():
 	""" Convert a string into a numeric list.
@@ -18,50 +19,53 @@ class Parser():
 
 	@property
 	def st(self):
-		return self._st
+		return self.__st
 	
 	@st.setter
 	def st(self, value) -> str:
 		if not len(value) > 0:
 			raise ValueError('Error: input string cannot be empty.')
-		self._st = value
+		self.__st = value
 
 	@property
 	def dl(self):
-		return self._dl
+		return self.__dl
 	
 	@dl.setter
 	def dl(self, value):
-		self._dl = value
+		if not len(value) > 0:
+			print('Warning: delimiter cannot be empty. Using default value.', file=sys.stderr)
+			raise 
+		self.__dl = value
 
 	@property
 	def rm(self):
-		return self._rm
+		return self.__rm
 	
 	@rm.setter
 	def rm(self, value):
 		# Slight violation of duck typing.
 		if not type(value) == list:
 			raise ValueError('Error: a list of strings should be given for removal')
-		self._rm = value
+		self.__rm = value
 
 	@property
 	def to_float(self):
-		return self._to_float
+		return self.__to_float
 	
 	@to_float.setter
 	def to_float(self, value):
-		self._to_float = value
+		self.__to_float = value
 
 	@staticmethod
-	def check_valid(val):
+	def check_valid(val: Any) -> bool:
 		try:
 			int(val)
 			return True
 		except ValueError:
 			return False
 
-	def parse(self):
+	def parse(self) -> str:
 		for i in range(len(self.rm)):
 			self.st = self.st.replace(self.rm[i], '')
 		if self.to_float:

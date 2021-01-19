@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List
+from typing import Any, List
 
 class BaseSort(ABC):
 	""" Class base for sorting.
@@ -9,7 +9,11 @@ class BaseSort(ABC):
 	"""
 
 	@staticmethod
-	def check_numeric(val):
+	def check_numeric(val: Any) -> bool:
+		""" Check whether a value is numeric.
+
+		Returns True if val is numeric, False otherwise.
+		"""
 		return False or (type(val) == int or type(val) == float)
 
 	def __init__(self, ar: List) -> None:
@@ -17,7 +21,7 @@ class BaseSort(ABC):
 
 	@property
 	def ar(self):
-		return self._ar
+		return self.__ar
 	
 	@ar.setter
 	def ar(self, value) -> List:
@@ -25,7 +29,7 @@ class BaseSort(ABC):
 			raise ValueError("Error: array cannot be empty.")
 		if not all([BaseSort.check_numeric(v) for v in value]):
 			raise ValueError("Error: array cannot contain non-numeric elements.")
-		self._ar = value
+		self.__ar = value
 
 	@abstractmethod
 	def sort(self, inplace: bool=True) -> List:
@@ -48,7 +52,7 @@ class SelectionSort(BaseSort):
 	"""
 
 	@staticmethod
-	def _compare_sort(l_ar, r_ar):
+	def _compare_sort(l_ar: List, r_ar: List) -> None:
 		while len(r_ar) > 0:
 			l_ar += [r_ar.pop(0)]
 			for i in range(len(r_ar)):

@@ -76,7 +76,7 @@ class FilePrinter():
 
 	@property
 	def fn(self) -> str:
-		return self._fn
+		return self.__fn
 	
 	@fn.setter
 	def fn(self, value):
@@ -84,45 +84,53 @@ class FilePrinter():
 			raise ValueError('Error: file name cannot be empty.')
 		if value.split('.')[-1] != 'txt':
 			raise ValueError('Error: only files with .txt extensions are allowed.')
-		self._fn = value
+		self.__fn = value
 	
 	@property
 	def fp(self) -> str:
-		return self._fp
+		return self.__fp
 	
 	@fp.setter
 	def fp(self, value):
 		if not len(value) > 0:
 			raise ValueError('Error: file path cannot be empty.')
-		self._fp = value
+		self.__fp = value
 	
 	@property
 	def dl(self) -> str:
-		return self._dl
+		return self.__dl
 	
 	@dl.setter
 	def dl(self, value):
 		if not len(value) > 0:
 			print('Warning: empty delimiter. Using default value.')
-			self._dl = ','
+			self.__dl = ','
 		else:
-			self._dl = value
+			self.__dl = value
 	
 	@property
 	def op(self) -> str:
-		return self._op
+		return self.__op
 	
 	@op.setter
 	def op(self, value):
-		self._op = value
+		if not len(value) > 0:
+			print('Warning: empty opener. Using default value.')
+			self.__op = '['
+		else:
+			self.__op = value
 	
 	@property
 	def cl(self) -> str:
-		return self._cl
+		return self.__cl
 	
 	@cl.setter
 	def cl(self, value):
-		self._cl = value
+		if not len(value) > 0:
+			print('Warning: empty closer. Using default value.')
+			self.__cl = ']'
+		else:
+			self.__cl = value
 	
 	def print_list(self, vals: List) -> None:
 		""" Print a list of integers.
