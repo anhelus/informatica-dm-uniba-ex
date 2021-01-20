@@ -20,7 +20,7 @@ def favorite_series(func):
 
 
 def check():
-	print('Sons of Anarchy')
+	print('Supernatural')
 
 
 @favorite_series

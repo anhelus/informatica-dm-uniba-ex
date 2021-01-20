@@ -18,3 +18,8 @@ if __name__ == "__main__":
 	sr = SelectionSort(l)
 	sr.sort()
 	print("Sorted array: {}".format(sr.ar))
+	save_to_file = input('Save to file?')
+	if save_to_file == 'Y':
+		file_name = input('Please enter file name')
+		fp = FilePrinter(file_name, os.getcwd())
+		fp.print_list(sr.ar)
