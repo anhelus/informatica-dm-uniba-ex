@@ -18,6 +18,11 @@ def test_input():
 
 
 def test_sorting():
+	"""
+	GIVEN a numeric input list
+	WHEN the sorting algorithm works
+	THEN a sorted list will be given as output
+	"""
 	s = SelectionSort([5, 2, 12, 7])
 	try:
 		s.sort()
@@ -35,6 +40,11 @@ def test_sorting():
 
 
 def test_classmethod():
+	"""
+	GIVEN a string reprenting required data
+	WHEN string is correctly interpreted
+	THEN a FilePrinter instance is created
+	"""
 	s = ('some_name.txt some_path some_del some_op some_cl')
 	p = FilePrinter.from_string(s)
 	try:
